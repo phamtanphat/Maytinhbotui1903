@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -43,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public void tinh(int index){
+    private void tinh(int index){
         int ketqua = 0;
         String sothu1 = edtSothu1.getText().toString();
         String sothu2 = edtSothu2.getText().toString();
-        
+
         int sth1 = Integer.parseInt(sothu1);
         int sth2 = Integer.parseInt(sothu2);
         if (index == 0){
@@ -55,6 +56,15 @@ public class MainActivity extends AppCompatActivity {
         }else if(index == 1){
             ketqua = sth1 - sth2;
         }
-        Log.d("BBB",ketqua + "");
+        txtKetqua.setText(" = " + ketqua );
     }
+
+    // 1 :pham vi hoat dong access modifier :
+    //  public private protected default
+//   2 : gia tri tra ve sau khi thuc thi xong
+//    void kieu du lieu dac biet khong can tra ve(khong dung return)
+//        private int Cong2So(int a , int b){
+//            int ketqua = a + b;
+//            return ketqua;
+//        }
 }
