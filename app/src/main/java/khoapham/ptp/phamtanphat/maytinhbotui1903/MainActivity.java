@@ -29,13 +29,32 @@ public class MainActivity extends AppCompatActivity {
        btnNhan = findViewById(R.id.buttonNhan);
        btnTru = findViewById(R.id.buttonTru);
 
-       btnTru.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               
-           }
-       });
+       //Lay du lieu
+        btnCong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tinh(0);
+            }
+        });
+        btnTru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               tinh(1);
+            }
+        });
     }
-
-
+    public void tinh(int index){
+        int ketqua = 0;
+        String sothu1 = edtSothu1.getText().toString();
+        String sothu2 = edtSothu2.getText().toString();
+        
+        int sth1 = Integer.parseInt(sothu1);
+        int sth2 = Integer.parseInt(sothu2);
+        if (index == 0){
+           ketqua = sth1 + sth2;
+        }else if(index == 1){
+            ketqua = sth1 - sth2;
+        }
+        Log.d("BBB",ketqua + "");
+    }
 }
